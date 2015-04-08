@@ -1,0 +1,57 @@
+<div>
+
+	<div ng-show="root.showDebugInfo">
+	    <p>root.isAuthenticationInitialized: {{root.isAuthenticationInitialized}}<p>
+	</div>
+	
+    <div ng-hide="root.isAuthenticationInitialized">
+      <h1>Welcome to Project Stefan Edberg</h1>
+    </div>
+
+
+	<div ng-show="root.isAuthenticationInitialized">
+		
+		<div ng-show="root.showDebugInfo">	
+		<p>user: {{root.user}}</p>
+		<p>hasSocialConnection: {{root.hasSocialConnection}}<p>
+		<p>failure reason: {{root.authFailureReason}}</p>
+		</div>
+
+		<div ng-hide="root.hasSocialConnection">
+		  <h2>Start by Signing In</h2>
+		  <p>No need for a new username & password to keep track of -- just sign in using Google or Facebook.</p>
+		  <div class="row">
+		    <div class="col-xs-2">
+			  <google-plus-signin clientId="198930494096-m0n3666pu5qb1dgukv5uhjbh379p2j3i.apps.googleusercontent.com" />
+		    </div>
+		    <div class="col-xs-2">
+		      <facebook-signin />
+		    </div>
+		  </div>
+		</div>
+		
+		<div ng-show="root.user">
+			<button class="btn btn-primary" ng-click="root.logout()">Logout</button>
+		</div>
+	
+		<div ng-show="root.user">
+			<h2>Auth Sub Section</h2>
+			<div ng-show="root.showDebugInfo">
+			  <p>Root greeting value from auth: {{root.greeting}}</p>
+			  <p>Auth greeting value from auth: {{root.greeting}}</p>
+			</div>
+			
+			<div class='margin-left' ng-show='root.user'>
+				<div>Hello, {{root.user.name}}!</div>
+			</div>
+			
+		</div>
+	
+		<div ng-show="root.hasSocialConnection && root.authFailureReason">
+		  <h2>Sign Up</h2>
+		  <p>To use Project Stefan Edberg, you need to create a profile.</p>
+		  <a class="btn btn-primary" href="#/createProfile">Create Profile</a>
+		</div>
+	
+	</div>
+</div>

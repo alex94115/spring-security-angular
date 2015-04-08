@@ -1,0 +1,68 @@
+<div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Create Profile</h1>
+      <p>Use this form to sign up.</p>
+
+      <form role="form" ng-submit="profile.signUp()">
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label control-label>Name</label>
+              <div>
+                <p class="form-control-static">{{profile.socialProfileUser.displayName || profile.socialProfileUser.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label for="postCode" class="control-label">Screen name</label>
+              <div>
+                <input type="text" class="form-control" id="screenName" name="screenName" ng-model="profile.signUpForm.screenName" placeholder="Screen name">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label for="postCode" class="control-label">Post code</label>
+              <div>
+                <input type="text" class="form-control" id="postCode" name="postCode" ng-model="profile.signUpForm.postCode" placeholder="Post code">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio">
+                <label> <input type="radio" name="genderRadios"
+                  id="female" value="female"
+                  ng-model="profile.signUpForm.gender" checked>
+                  Female
+                </label>
+              </div>
+              <div class="radio">
+                <label> <input type="radio" name="genderRadios"
+                  id="male" value="male"
+                  ng-model="profile.signUpForm.gender"> Male
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div>

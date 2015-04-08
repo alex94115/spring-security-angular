@@ -1,8 +1,0 @@
-logging:
-  level:
-    org.springframework.security: DEBUG
-security:
-  user:
-    role: USER,ADMIN
-server:
-  port: 8082
